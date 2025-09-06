@@ -1,0 +1,193 @@
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background: rgba(103, 103, 229, 0.53);
+    background-size: cover;
+    background-position: center;
+    transition: background 1s ease-in-out;
+    overflow: hidden;
+}
+
+.weather-icon {
+    display: block;
+    width: 90px;
+    height: 90px;
+    margin: 0 auto 20px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    width: 350px;
+    height: 400px;
+    background-color: aliceblue;
+    border-radius: 20px;
+    padding: 30px 40px;
+    color: rgba(103, 103, 229, 0.9);
+    box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+    z-index: 10;
+}
+
+.container h2 {
+    text-align: center; 
+    font-size: 32px;
+    margin-top: 0;
+}
+
+.container .input-box {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    height: 50px;
+    margin: 20px 0;
+}
+
+.input-box .input {
+    border-radius: 20px;
+    border: 2px solid rgba(103, 103, 229, 0.53);
+    padding: 0 10px;
+    width: 100%;
+    outline: none;
+    font-size: 16px;
+    color: rgba(50, 50, 150, 0.8);
+}
+
+.container .btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 40px;
+    height: 40px;
+    width: 200px;
+    border: 2px solid rgba(103, 103, 229, 0.53);
+    background-color: white;
+    font-weight: 500;
+    font-size: 16px;
+    color: rgba(1, 1, 15, 0.7);
+    margin: 0 auto;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+.container .btn:hover {
+    background-color: rgba(103, 103, 229, 0.8);
+    color: white;
+}
+
+.weather-result {
+    margin-top: 20px;
+    text-align: center;
+    color: rgba(30, 30, 100, 0.9);
+}
+
+.weather-result .city-name {
+    font-size: 24px;
+    font-weight: 600;
+}
+
+.weather-result .temperature,
+.weather-result .condition {
+    font-size: 18px;
+    margin: 5px 0;
+}
+
+.clouds {
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 100%;
+    height: 150px;
+    pointer-events: none;
+    display: none;
+}
+.cloud {
+    width: 200px;
+    height: 60px;
+    background: #fff;
+    border-radius: 100px;
+    position: absolute;
+    top: 40px;
+    left: -250px;
+    box-shadow: 60px 0px 50px #fff, 120px 10px 70px #fff, 200px -10px 50px #fff;
+    animation: moveClouds 60s linear infinite;
+    opacity: 0.8;
+}
+.cloud:nth-child(2) {
+    top: 100px;
+    animation-duration: 90s;
+    opacity: 0.6;
+}
+@keyframes moveClouds {
+    from { left: -250px; }
+    to { left: 100%; }
+}
+
+.sun {
+    position: absolute;
+    top: 50px;
+    right: 80px;
+    width: 100px;
+    height: 100px;
+    background: yellow;
+    border-radius: 50%;
+    box-shadow: 0 0 30px yellow;
+    animation: spin 20s linear infinite;
+    display: none;
+}
+@keyframes spin {
+    from { transform: rotate(0deg); }
+    to { transform: rotate(360deg); }
+}
+
+.rain {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+}
+.rain::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 200%;
+    background-image: linear-gradient(transparent, rgba(255,255,255,0.4) 50%, transparent);
+    background-size: 2px 20px;
+    animation: rainFall 0.5s linear infinite;
+}
+@keyframes rainFall {
+    from { transform: translateY(0); }
+    to { transform: translateY(20px); }
+}
+
+.snow {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    display: none;
+}
+.snow::before {
+    content: "";
+    position: absolute;
+    top: -100%;
+    width: 100%;
+    height: 200%;
+    background-image: radial-gradient(white 2px, transparent 2px);
+    background-size: 20px 20px;
+    animation: snowFall 5s linear infinite;
+}
+@keyframes snowFall {
+    from { transform: translateY(0); }
+    to { transform: translateY(100px); }
+}

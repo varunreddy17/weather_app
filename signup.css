@@ -1,0 +1,73 @@
+body{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 80vh;
+    background-position: center;
+    background-size: cover;
+    background-color: rgba(103, 103, 229, 0.53);
+    margin: 0;
+    padding: 50px;
+}
+.container {
+    border-radius: 20px;
+    height: 500px;
+    width: 420px;
+    background-color: white;
+    padding: 40px 30px; /* space inside the box */
+    color: rgb(164, 193, 218);
+    display: flex;
+    flex-direction: column; /* stack heading & form */
+    justify-content: flex-start; /* push content to top */
+    align-items: center; /* keep centered horizontally */
+}
+
+.container h3 {
+    font-size: 30px;
+    text-align: center;
+    margin: 0 0 20px 0; /* remove top margin, add bottom gap */
+}
+.container .register-input{
+    position:relative;
+    height: 50px;
+    width: 100%;
+    margin: 30px ,0;
+    margin-bottom: 8px;
+}
+.register-input input{
+    width: 300px;
+    height: 50px;
+    background :transparent;
+    border: none;
+    outline: none;
+    border: 2px solid rgb(255,255,255,.2);
+    border-radius: 40px;
+    color: rgb(164, 193, 218);
+    padding-left: 5px;
+    border-color: rgb(164, 193, 218);
+    justify-content: space-between;
+    gap: 10px;
+    color: rgb(16, 17, 14);
+}
+.container .submit-btn{
+   display: block;
+   margin: 20px auto;
+   padding: 10px 20px;
+   border-radius: 40px;
+   width: 300px;
+   background-color: rgb(164, 193,218);
+   outline: none;
+   border: none;
+   height: 40px;
+   cursor: pointer;
+   font-weight: 600;
+}
+.container .signin{
+    text-align: center;
+    margin: 20px 0 15px;
+    font-size: 14.5px;
+}
+.signin p a{
+    color: rgb(164, 193, 218);
+    font-weight: 600;
+}

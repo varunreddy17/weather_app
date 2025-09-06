@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Weatherly</title>
+  <link rel="stylesheet" href="home.css">
+</head>
+<body>
+  <div class="clouds" id="clouds">
+    <div class="cloud"></div>
+    <div class="cloud"></div>
+  </div>
+  <div class="sun" id="sun"></div>
+
+  <div class="rain" id="rain"></div>
+
+  <div class="snow" id="snow"></div>
+
+  <div class="container">
+    <form action="">
+      <img src="weather.png" alt="Weather Icon" class="weather-icon">
+      <h2>Weather Conditions</h2>
+      <div class="input-box">
+        <input type="text" class="input" placeholder="Enter your place" required>
+      </div>
+      <button type="submit" class="btn">Get Weather</button>
+    </form>
+
+    <div class="weather-result">
+      <h3 class="city-name"></h3>
+      <p class="temperature"></p>
+      <p class="condition"></p>
+    </div>
+  </div>
+
+  <script src="main.js"></script>
+</body>
+</html>
